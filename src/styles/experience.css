@@ -1,0 +1,113 @@
+.experience-section {
+  padding: 8rem 5%;
+  background: rgba(15, 15, 15, 0.9);
+  position: relative;
+  z-index: 2;
+}
+
+.timeline {
+  max-width: 1000px;
+  margin: 3rem auto 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: rgba(212, 175, 55, 0.2);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-left: auto;
+  text-align: right;
+}
+
+.timeline-content {
+  width: 45%;
+  padding: 2rem;
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 5px 20px rgba(212, 175, 55, 0.1);
+}
+
+.timeline-header h3 {
+  color: var(--gold-light);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.company-period {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.company {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.period {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.location {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.achievements {
+  list-style: none;
+  padding: 0;
+}
+
+.achievements li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.achievement-marker {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 30px;
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-content {
+    width: auto;
+    margin-left: 60px;
+    text-align: left;
+  }
+}
