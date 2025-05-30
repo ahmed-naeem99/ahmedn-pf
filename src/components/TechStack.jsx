@@ -1,23 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  SiReact, 
-  SiJavascript, 
-  SiPython, 
-  SiWordpress,
-  SiNodedotjs,
-
+  SiReact, SiJavascript, SiPython, SiWordpress, SiNodedotjs,
+  SiTailwindcss, SiGit 
 } from 'react-icons/si';
 import '../styles/techstack.css';
 
 const TechStack = () => {
   const technologies = [
-    { name: 'React', icon: <SiReact size={30} />, level: 90 },
-    { name: 'JavaScript', icon: <SiJavascript size={30} />, level: 85 },
-    { name: 'Python', icon: <SiPython size={30} />, level: 80 },
-    { name: 'Node.js', icon: <SiNodedotjs size={30} />, level: 80 },
-    { name: 'WordPress', icon: <SiWordpress size={30} />, level: 85 }
-  ];
+  { name: 'React', icon: <SiReact size={30} />, level: 90 },
+  { name: 'JavaScript', icon: <SiJavascript size={30} />, level: 85 },
+  { name: 'Python', icon: <SiPython size={30} />, level: 80 },
+  { name: 'Node.js', icon: <SiNodedotjs size={30} />, level: 80 },
+  { name: 'WordPress', icon: <SiWordpress size={30} />, level: 85 },
+  { name: 'Tailwind CSS', icon: <SiTailwindcss size={30} />, level: 80 },
+  { name: 'Git', icon: <SiGit size={30} />, level: 90 },
+];
 
   return (
     <section id="techstack" className="techstack-section">
@@ -28,9 +26,9 @@ const TechStack = () => {
           transition={{ duration: 0.5 }}
           className="section-title"
         >
-          Technical <span className="gold-text">Arsenal</span>
+          My <span className="gold-text">Tech Stack</span>
         </motion.h2>
-        <p className="section-subtitle">Tools and technologies I wield with expertise</p>
+        <p className="section-subtitle">Frameworks and tools I use to bring ideas to life.</p>
       </div>
 
       <div className="tech-grid">

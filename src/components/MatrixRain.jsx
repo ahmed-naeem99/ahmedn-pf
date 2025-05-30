@@ -17,7 +17,7 @@ const MatrixRain = ({ color, opacity }) => {
     resizeCanvas();
     
     // Matrix characters
-    const chars = "01アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
+    const chars = "01アァカ2サタナ2ハ3マ3ヤ4ャラ3ワガ5ザ4ダ3バパ5イィキシ6チニヒミ5リヰ874ギジヂ75ビ7ピウゥク9スツヌ0フム7ユュル8グ8ズブヅ99プエェ-ケセテ0ネ0ヘメレヱ1ゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
     const fontSize = 18;
     const columns = Math.floor(canvas.width / fontSize);
     const drops = Array(columns).fill(1);

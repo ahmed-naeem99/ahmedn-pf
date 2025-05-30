@@ -78,12 +78,16 @@
 }
 
 .highlight.pulse {
-    animation: textPulse 3s infinite;
+    animation: textPulse 2.5s infinite;
 }
 
 @keyframes textPulse {
-    0%, 100% { text-shadow: 0 0 15px var(--gold-transparent); }
-    50% { text-shadow: 0 0 25px rgba(212, 175, 55, 0.7); }
+  0%, 100% {
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
+  }
 }
 
 /* Typewriter */
@@ -168,4 +172,122 @@
         height: 450px;
         margin: 4rem auto 0;
     }
+}
+
+@import url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css");
+
+.hero-tagline {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: var(--gold-light);
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+.hero-cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.9rem 2.2rem;
+  background: var(--gold);
+  color: var(--black);
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+}
+
+.hero-cta:hover {
+  background: var(--gold-dark);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+}
+
+/* Shimmer Effect on Name */
+.shimmer {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmerAnim 2.5s infinite;
+}
+
+@keyframes shimmerAnim {
+  0% { left: -75%; }
+  50% { left: 125%; }
+  100% { left: 125%; }
+}
+
+/* Floating Tech Icons */
+.tech-bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.tech-bubbles i {
+  position: absolute;
+  font-size: 2.5rem;
+  color: var(--gold);
+  opacity: 0.25;
+  animation: float 6s infinite ease-in-out;
+}
+
+.tech-bubbles i:nth-child(1) {
+  top: 10%;
+  left: 80%;
+  animation-delay: 0s;
+}
+.tech-bubbles i:nth-child(2) {
+  bottom: 20%;
+  left: 10%;
+  animation-delay: 1s;
+}
+.tech-bubbles i:nth-child(3) {
+  top: 40%;
+  right: 15%;
+  animation-delay: 2s;
+}
+.tech-bubbles i:nth-child(4) {
+  top: 75%;
+  left: 60%;
+  animation-delay: 1.5s;
+}
+.tech-bubbles i:nth-child(5) {
+  top: 10%;
+  left: 10%;
+  animation-delay: 2s;
+}
+.tech-bubbles i:nth-child(6) {
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 2.5s;
+}
+.tech-bubbles i:nth-child(7) {
+  top: 50%;
+  left: 15%;
+  animation-delay: 3s;
+}
+
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
 }

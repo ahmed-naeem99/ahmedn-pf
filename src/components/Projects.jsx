@@ -8,7 +8,7 @@ const Projects = () => {
     { 
       title: 'Reality Quest ARG', 
       desc: 'Interactive alternate reality game platform blending digital and physical worlds',
-      tags: ['React', 'Node.js', 'Vercel', 'Firebase'],
+      tags: ['React', 'Node.js', 'Neon DB', 'Firebase'],
       date: 'Feb 2025',
       features: [
         'Secure user authentication system',
@@ -21,12 +21,12 @@ const Projects = () => {
     { 
       title: 'Yusr Funeral Aid', 
       desc: 'Financial assistance platform for funeral expenses',
-      tags: ['WordPress', 'CSS', 'Payment Gateway'],
+      tags: ['WordPress', 'CSS', 'Custom APIs'],
       date: 'Dec 2024',
       features: [
-        'Custom donation system',
+        'Custom API payment system',
         '10,000+ visitors',
-        'Community engagement tools'
+        'Program Registration feature'
       ],
       link: 'https://yusr.ca',
       image: '/assets/pj2.png'

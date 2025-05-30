@@ -22,20 +22,22 @@ const Navbar = () => {
       transition={{ duration: 0.8 }}
     >
       <div className="nav-left">
-        <a href="https://www.linkedin.com/in/ahmed-abdullah-naeem" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin className="social-icon" />
-        </a>
-        <a href="https://github.com/ahmed-naeem99" target="_blank" rel="noopener noreferrer">
-          <FaGithub className="social-icon" />
-        </a>
-        <h1 className="logo">ahmednaeem.ca</h1>
+        <a href="#hero" className="logo">AN</a>
+        <div className="social-icons">
+          <a href="https://www.linkedin.com/in/ahmed-abdullah-naeem" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className="social-icon" />
+          </a>
+          <a href="https://github.com/ahmed-naeem99" target="_blank" rel="noopener noreferrer">
+            <FaGithub className="social-icon" />
+          </a>
+        </div>
       </div>
 
       <ul className="nav-links">
         <li><a href="#hero">Home</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#techstack">Skills</a></li>
       </ul>
     </motion.nav>
   );
