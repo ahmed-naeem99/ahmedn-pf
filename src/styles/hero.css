@@ -1,4 +1,3 @@
-/* ===== BLACK & GOLD THEME ===== */
 :root {
     --black: #0a0a0a;
     --dark: #121212;
@@ -6,27 +5,27 @@
     --gold-light: #f0e6c2;
     --gold-dark: #9b7a2a;
     --gold-transparent: rgba(212, 175, 55, 0.1);
-  }
+}
   
-  /* Base Styles */
-  .hero-image {
+/* Base Styles */
+.hero-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center top;
-  }
-
-  .fullpage-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
 }
-  
-  /* Gold Gradient Background */
-  .gold-gradient-bg {
+
+.fullpage-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Gold Gradient Background */
+.gold-gradient-bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -39,37 +38,23 @@
       var(--black) 100%
     );
     z-index: 0;
-  }
-  
-  /* Gold Accents */
-  .gold-accent {
+}
+
+/* Gold Accents */
+.gold-accent {
     position: absolute;
     height: 3px;
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
     z-index: 3;
-  }
-  
-  .gold-accent.top {
-    top: 80px;
-    width: 40%;
-    left: 10%;
-    animation: goldPulse 8s infinite;
-  }
-  
-  .gold-accent.bottom {
-    bottom: 80px;
-    width: 40%;
-    right: 10%;
-    animation: goldPulse 8s infinite 2s;
-  }
-  
-  @keyframes goldPulse {
+}
+
+@keyframes goldPulse {
     0%, 100% { opacity: 0.7; }
     50% { opacity: 1; }
-  }
-  
-  /* Hero Content */
-  .hero-content {
+}
+
+/* Hero Content */
+.hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -80,65 +65,65 @@
     padding: 0 10%;
     position: relative;
     z-index: 2;
-  }
-  
-  /* Text Styles */
-  .hero-text h1 {
+}
+
+/* Text Styles */
+.hero-text h1 {
     font-size: 6rem;
     color: var(--gold-light);
     margin: 0;
     line-height: 1.1;
     font-weight: 800;
     letter-spacing: -2px;
-  }
-  
-  .highlight.pulse {
+}
+
+.highlight.pulse {
     animation: textPulse 3s infinite;
-  }
-  
-  @keyframes textPulse {
+}
+
+@keyframes textPulse {
     0%, 100% { text-shadow: 0 0 15px var(--gold-transparent); }
     50% { text-shadow: 0 0 25px rgba(212, 175, 55, 0.7); }
-  }
-  
-  /* Typewriter */
-  .typewriter-wrapper {
+}
+
+/* Typewriter */
+.typewriter-wrapper {
     font-size: 3.5rem;
     color: var(--gold);
     font-weight: 600;
     min-height: 5rem;
     margin-top: 2rem;
-  }
-  
-  .Typewriter__cursor {
+}
+
+.Typewriter__cursor {
     color: var(--gold) !important;
     font-weight: 400 !important;
-  }
-  
-  /* Image Container */
-  .hero-img-container {
+}
+
+/* Image Container */
+.hero-img-container {
     width: 600px;
     height: 700px;
     position: relative;
-  }
-  
-  .image-frame {
+}
+
+.image-frame {
     position: relative;
     width: 100%;
     height: 100%;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 0 40px var(--gold-transparent);
-  }
-  
-  .hero-image {
+}
+
+.hero-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center top;
-  }
-  
-  .gold-overlay {
+}
+
+.gold-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -150,40 +135,37 @@
       transparent 50%,
       rgba(10, 10, 10, 0.8) 100%
     );
-  }
-  
-  /* Responsive */
-  @media (max-width: 1440px) {
+}
+
+/* Responsive */
+@media (max-width: 1440px) {
     .hero-text h1 { font-size: 5rem; }
     .typewriter-wrapper { font-size: 3rem; }
     .hero-img-container { width: 500px; height: 600px; }
-  }
-  
-  @media (max-width: 1024px) {
+}
+
+@media (max-width: 1024px) {
     .hero-content { gap: 2rem; padding: 0 5%; }
     .hero-text h1 { font-size: 4rem; }
     .typewriter-wrapper { font-size: 2.5rem; }
     .hero-img-container { width: 400px; height: 500px; }
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .hero-content {
-      grid-template-columns: 1fr;
-      text-align: center;
-      padding-top: 120px;
-      padding-bottom: 80px;
-      height: auto;
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 120px;
+        padding-bottom: 80px;
+        height: auto;
     }
     
     .hero-text h1 { font-size: 3.5rem; }
     .typewriter-wrapper { font-size: 2rem; min-height: 4rem; }
     
     .hero-img-container {
-      width: 350px;
-      height: 450px;
-      margin: 4rem auto 0;
+        width: 350px;
+        height: 450px;
+        margin: 4rem auto 0;
     }
-    
-    .gold-accent.top,
-    .gold-accent.bottom { width: 60%; }
-  }
+}
