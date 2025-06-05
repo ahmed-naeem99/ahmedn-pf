@@ -95,8 +95,12 @@
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    padding: 0.8rem 1.2rem;
+    padding: 0.6rem 1rem;
     align-items: stretch;
+  }
+
+  .navbar.scrolled {
+    padding: 0.4rem 1rem;
   }
 
   .nav-left {
@@ -104,26 +108,34 @@
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.5rem;
+    flex-wrap: nowrap;
+    margin-bottom: 0.4rem;
   }
 
   .logo {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .social-icon {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .nav-links {
-    flex-direction: column;
-    gap: 0.75rem;
-    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    justify-content: center;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
   }
 
   .nav-links a {
-    font-size: 1rem;
-    padding: 0.3rem 0;
+    font-size: 0.95rem;
+    padding: 0.3rem 0.5rem;
+    white-space: nowrap;
   }
 }
