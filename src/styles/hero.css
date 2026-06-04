@@ -69,12 +69,13 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 6%;
+  padding: 0 8%;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 6rem;
-  padding-top: 80px;
+  gap: 8rem;
+  padding-top: 100px;
+  padding-bottom: 80px;
   min-height: 100vh;
 }
 
@@ -82,7 +83,7 @@
 .hero-text {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 0.25rem;
 }
 
 .hero-system-tag {
@@ -120,7 +121,7 @@
   line-height: 0.95;
   letter-spacing: -0.03em;
   color: var(--gold-light);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-name .char {
@@ -171,7 +172,7 @@
   color: var(--text-muted);
   line-height: 1.7;
   max-width: 520px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   opacity: 0;
   animation: fadeUp 0.6s 1.8s ease forwards;
 }
@@ -180,7 +181,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   opacity: 0;
   animation: fadeUp 0.6s 2s ease forwards;
 }

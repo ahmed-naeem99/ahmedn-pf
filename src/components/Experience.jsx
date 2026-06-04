@@ -33,11 +33,11 @@ const EXPERIENCES = [
     tags: ['Python', 'Flask', 'React', 'SQL', 'ETL', 'Git', 'CI/CD', 'Agile'],
   },
   {
-    role: 'AI + Fintech Intern',
+    role: 'ML Engineer',
     company: 'SCOOTY',
     period: 'May 2025 – Aug 2025',
     location: 'Remote',
-    badge: 'Internship',
+    badge: 'Contract',
     achievements: [
       <>Mastered <strong>RAG</strong>, agentic workflows, and <strong>LLM</strong> prompt-based automation to build financial tech solutions achieving <strong>98% accuracy</strong> in data retrieval</>,
       <>Developed <strong>ML</strong> and <strong>DL models</strong> focused on industry challenges, completing a rigorous technical and soft-skills curriculum</>,

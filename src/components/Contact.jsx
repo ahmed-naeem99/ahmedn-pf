@@ -19,8 +19,8 @@ const Contact = () => {
             Let's <span className="accent">Connect</span>
           </h2>
           <p className="contact-tagline">
-            Open to software engineering roles, interesting projects, and collaborations.
-            Whether you want to build something great or just talk tech — my inbox is open.
+            Building interesting things and want to talk? Have a project that needs
+            someone who ships? I'm reachable — hit me up.
           </p>
         </div>
 

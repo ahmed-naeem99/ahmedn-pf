@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
 import '../styles/projects.css';
 
-const PROJECTS = [
+const ALL_PROJECTS = [
   {
     id: 1,
     title: 'AI Stock Investment Strategist Agent',
@@ -94,24 +94,9 @@ const PROJECTS = [
     image: null,
     icon: '🧩',
   },
-  {
-    id: 6,
-    title: 'AI Magic Trick',
-    type: 'AI / Interactive Web',
-    year: 'Mar 2025',
-    desc: 'Web-based magic experience with an AI prediction engine that reads minds. Built with React + Flask for the real-time card selection and prediction system.',
-    longDesc: 'An interactive web magic trick where users think of a card, and the AI "reads their mind" using a prediction algorithm built in Flask. The experience is designed to feel genuinely magical, with a smooth React frontend that guides the user through the illusion.',
-    features: [
-      <><strong>React</strong> frontend with smooth animated card selection interface</>,
-      <><strong>Flask</strong> backend powering the AI prediction engine</>,
-      <>Real-time prediction with seamless <strong>API communication</strong></>,
-    ],
-    tags: ['React', 'Flask', 'Python', 'AI/ML'],
-    github: 'https://github.com/ahmed-naeem99/Magic-Trick',
-    image: null,
-    icon: '🪄',
-  },
 ];
+
+const PROJECTS = ALL_PROJECTS.filter(p => [4, 3, 1].includes(p.id));
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -212,7 +197,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="projects-grid">
+        <div className="projects-grid projects-grid--three">
           {PROJECTS.map((project, i) => (
             <motion.div
               key={project.id}
@@ -284,6 +269,25 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          style={{ textAlign: 'center', marginTop: '3.5rem' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <a
+            href="https://github.com/ahmed-naeem99"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+          >
+            <FaGithub />
+            See everything on GitHub
+          </a>
+        </motion.div>
       </section>
 
       {selected && (

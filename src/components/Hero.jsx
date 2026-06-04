@@ -109,10 +109,10 @@ const Hero = () => {
             </div>
 
             <p className="hero-tagline">
-              Toronto-based software engineer building AI-powered systems, containerized infrastructure,
-              and high-performance web apps. Currently Co-Founder at{' '}
-              <a href="https://yusr.ca" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold)', textDecoration: 'none' }}>Yusr</a>{' '}
-              and pursuing Honours CS at Toronto Metropolitan University.
+              Building AI-powered systems, containerized infrastructure, and full-stack products
+              that ship. Co-Founder &amp; Lead Engineer at{' '}
+              <a href="https://yusr.ca" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold)', textDecoration: 'none' }}>Yusr</a>.{' '}
+              Honours CS @ Toronto Metropolitan University.
             </p>
 
             <div className="hero-actions">
@@ -213,11 +213,11 @@ const Hero = () => {
                 </div>
                 <div className="hero-chip chip-2">
                   <span className="chip-dot" />
-                  Open to Opportunities
+                  Co-Founder @ Yusr
                 </div>
                 <div className="hero-chip chip-3">
-                  <span className="chip-dot" style={{ background: '#4ade80', boxShadow: '0 0 8px rgba(74,222,128,0.6)' }} />
-                  Available for Work
+                  <span className="chip-dot" />
+                  TMU Computer Science
                 </div>
               </div>
             </div>
