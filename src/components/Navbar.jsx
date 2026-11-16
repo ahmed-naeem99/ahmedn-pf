@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { PROFILE } from '../data/content';
 import '../styles/navbar.css';
 
 const NAV_ITEMS = [
@@ -71,7 +72,7 @@ const Navbar = () => {
           ))}
           <li>
             <a
-              href="/Ahmed Naeem Resume - Software copy.pdf"
+              href={PROFILE.resume}
               target="_blank"
               rel="noopener noreferrer"
               className="nav-cta"
@@ -83,7 +84,7 @@ const Navbar = () => {
 
         <div className="nav-right">
           <a
-            href="https://github.com/ahmed-naeem99"
+            href={PROFILE.github}
             target="_blank"
             rel="noopener noreferrer"
             className="nav-social-icon"
@@ -91,7 +92,7 @@ const Navbar = () => {
             <FaGithub />
           </a>
           <a
-            href="https://www.linkedin.com/in/ahmed-abdullah-naeem"
+            href={PROFILE.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="nav-social-icon"

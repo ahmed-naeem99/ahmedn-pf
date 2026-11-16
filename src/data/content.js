@@ -10,7 +10,7 @@ export const PROFILE = {
   name: 'Ahmed Naeem',
   email: 'ahmednumber10@gmail.com',
   github: 'https://github.com/ahmed-naeem99',
-  linkedin: 'https://www.linkedin.com/in/ahmed-abdullah-naeem',
+  linkedin: 'https://www.linkedin.com/in/ahmed-a-naeem',
   resume: '/Ahmed_Naeem_Resume.pdf',
   resumeData: '/Ahmed_Naeem_Resume_Data_Engineering.pdf',
   location: 'Toronto, ON',
