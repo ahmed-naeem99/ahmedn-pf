@@ -1,25 +1,8 @@
 import React from 'react';
-
-const ITEMS = [
-  'Full-Stack Engineering',
-  'AI Systems',
-  'Docker & Self-Hosting',
-  'Next.js 15',
-  'FastAPI',
-  'LLM Integration',
-  'Agentic Workflows',
-  'n8n Automation',
-  'PostgreSQL',
-  'Quantitative Finance',
-  'Geospatial Data',
-  'REST APIs',
-  'React',
-  'Python',
-  'Node.js',
-];
+import { TICKER } from '../data/content';
 
 const TickerStrip = () => {
-  const doubled = [...ITEMS, ...ITEMS];
+  const doubled = [...TICKER, ...TICKER];
   return (
     <div className="ticker-strip">
       <div className="ticker-track">

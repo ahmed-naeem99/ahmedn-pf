@@ -226,3 +226,9 @@
   .timeline-item { padding-left: 2.5rem; }
   .tc-header { flex-direction: column; }
 }
+
+
+.tc-note {
+  color: var(--text-muted);
+  font-style: italic;
+}

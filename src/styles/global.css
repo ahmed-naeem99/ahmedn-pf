@@ -167,6 +167,23 @@ body::before {
   color: var(--gold-light);
 }
 
+/* Inline code inside prose */
+.rich {
+  flex: 1;
+  min-width: 0;
+}
+
+.inline-code {
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  color: var(--gold-light);
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.14);
+  border-radius: 4px;
+  padding: 0.05em 0.35em;
+}
+
 /* Button */
 .btn {
   display: inline-flex;

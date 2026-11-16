@@ -1,121 +1,24 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
+import { SKILLS, CERTS } from '../data/content';
 import '../styles/skills.css';
 
-const CATEGORIES = [
-  {
-    icon: '💻',
-    name: 'Languages',
-    sub: 'Core Proficiency',
-    skills: [
-      { name: 'Python', level: 92 },
-      { name: 'JavaScript / TypeScript', level: 90 },
-      { name: 'SQL', level: 85 },
-      { name: 'Java', level: 78 },
-      { name: 'C / C++', level: 72 },
-      { name: 'C#', level: 68 },
-    ],
-  },
-  {
-    icon: '⚡',
-    name: 'Frameworks & Runtime',
-    sub: 'Web + Backend',
-    skills: [
-      { name: 'Next.js 15 / React', level: 92 },
-      { name: 'Node.js', level: 88 },
-      { name: 'FastAPI / Flask', level: 85 },
-      { name: 'Tailwind CSS', level: 88 },
-      { name: 'Prisma + PostgreSQL', level: 82 },
-    ],
-  },
-  {
-    icon: '🤖',
-    name: 'AI & Data',
-    sub: 'Machine Learning + LLMs',
-    skills: [
-      { name: 'Ollama + Local LLMs', level: 85 },
-      { name: 'RAG / Agentic Workflows', level: 82 },
-      { name: 'Pandas + NumPy', level: 88 },
-      { name: 'OpenCV', level: 72 },
-      { name: 'LLM Prompt Engineering', level: 88 },
-    ],
-  },
-  {
-    icon: '🛠️',
-    name: 'DevOps & Tools',
-    sub: 'Infrastructure + Automation',
-    skills: [
-      { name: 'Docker / Docker Compose', level: 85 },
-      { name: 'Git + CI/CD', level: 90 },
-      { name: 'n8n (Workflow Automation)', level: 80 },
-      { name: 'Coolify / Vercel', level: 82 },
-      { name: 'Jupyter Notebooks', level: 85 },
-    ],
-  },
-];
-
-const CERTS = [
-  {
-    icon: '🔒',
-    name: 'Microsoft SC-900: Security, Compliance & Identity Fundamentals',
-    issuer: 'Microsoft Certified · Jan 2026',
-  },
-  {
-    icon: '🤖',
-    name: 'AI Driven Fintech Transformation Skills',
-    issuer: 'Ontario Tech University',
-  },
-];
-
-const SkillBar = ({ skill, animate }) => {
-  return (
-    <div className="skill-row">
-      <div className="skill-info">
-        <span className="skill-name">{skill.name}</span>
-        <span className="skill-pct">{skill.level}%</span>
-      </div>
-      <div className="skill-bar-track">
-        <div
-          className={`skill-bar-fill ${animate ? 'animate' : ''}`}
-          style={{ width: `${skill.level}%` }}
-        />
-      </div>
-    </div>
-  );
-};
-
 const Skills = () => {
-  const [visible, setVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setVisible(true), 200);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="skills" className="skills-section" ref={sectionRef}>
+    <section id="skills" className="skills-section">
       <div className="skills-header">
         <div className="section-label">Technical Arsenal</div>
         <h2 className="section-title">
-          Skills & <span className="accent">Stack</span>
+          Skills &amp; <span className="accent">Stack</span>
         </h2>
         <p className="section-subtitle">
-          Languages, frameworks, and tools I use to ship production systems.
+          No percentage bars. These are the tools I've shipped production systems with,
+          and what I used each of them for.
         </p>
       </div>
 
       <div className="skills-layout">
-        {CATEGORIES.map((cat, i) => (
+        {SKILLS.map((cat, i) => (
           <motion.div
             key={cat.name}
             className="skill-category"
@@ -132,10 +35,11 @@ const Skills = () => {
               </div>
             </div>
             <div className="skill-items">
-              {cat.skills.map((s) => (
-                <SkillBar key={s.name} skill={s} animate={visible} />
+              {cat.items.map((s) => (
+                <span key={s} className="tag skill-pill">{s}</span>
               ))}
             </div>
+            <p className="skill-note">{cat.note}</p>
           </motion.div>
         ))}
       </div>

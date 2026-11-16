@@ -1,15 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ABOUT_STATS, EDUCATION } from '../data/content';
 import '../styles/about.css';
-
-const STATS = [
-  { number: '2+', label: 'Years Coding' },
-  { number: '10+', label: 'Projects' },
-  { number: '3', label: 'Internships' },
-  { number: '15+', label: 'Technologies' },
-  { number: '10K+', label: 'Users' },
-  { number: '1', label: 'Startup' },
-];
 
 const About = () => {
   return (
@@ -25,30 +17,41 @@ const About = () => {
 
           <div className="about-text">
             <p>
-              I'm <strong>Ahmed Naeem</strong>, a computer science student at{' '}
-              <strong>Toronto Metropolitan University</strong> and the{' '}
-              <strong>Co-Founder & Lead Engineer at Yusr Funeral Financial Aid</strong> — a
-              self-hosted SaaS platform serving the Canadian Muslim community.
+              I'm <strong>Ahmed Naeem</strong>, a computer science co-op student at{' '}
+              <strong>Toronto Metropolitan University</strong>. Most of what I've built
+              is the unglamorous kind: payment flows, ride backends, data pipelines,
+              support tooling — systems where being wrong costs someone real money.
             </p>
             <p>
-              My work spans <strong>full-stack web development</strong>,{' '}
-              <strong>AI/LLM systems</strong>, and <strong>containerized infrastructure</strong>.
-              I've built private vision LLMs for OCR, n8n automation pipelines, and quantitative
-              finance tools — all while shipping products that real people depend on.
+              At <strong>SCOOTY Mobility</strong> I rebuilt the payment lifecycle on Stripe
+              and cut annual fraud losses by 89%, then rearchitected the ride-platform
+              backend in four weeks and migrated a 500-vehicle fleet onto it while it kept
+              running. On the side I built <strong>RideGuide</strong>, a transit ML pipeline
+              that has turned 41.1M prediction snapshots into 12.1M labeled training
+              examples, and <strong>Trivial</strong>, a real-time quiz platform I still
+              operate for live classrooms.
             </p>
             <p>
-              I believe the best engineering is invisible: systems so solid they just work,
-              interfaces so intuitive users don't notice them.
+              I'm also <strong>Co-Founder &amp; Lead Engineer at Yusr Funeral Financial
+              Aid</strong>, where I built and still run every part of the stack, including
+              an on-premise vision model so families' identity documents never leave our
+              hardware.
+            </p>
+            <p>
+              The thread through all of it: I'd rather prove a system is correct than
+              assume it. The load test I'm proudest of doesn't check that nothing crashed —
+              it recomputes every player's score independently and diffs it against the
+              server.
             </p>
           </div>
 
           <div className="edu-card">
             <div className="edu-label">Education</div>
-            <div className="edu-school">Toronto Metropolitan University</div>
-            <div className="edu-program">Honours BSc, Computer Science</div>
-            <div className="edu-period">Expected Graduation: May 2029 · Toronto, ON</div>
+            <div className="edu-school">{EDUCATION.school}</div>
+            <div className="edu-program">{EDUCATION.program}</div>
+            <div className="edu-period">{EDUCATION.period}</div>
             <div className="edu-courses">
-              {['Python', 'Java', 'Data Structures', 'Web Security', 'DB Systems', 'Discrete Math'].map((c) => (
+              {EDUCATION.courses.map((c) => (
                 <span key={c} className="tag">{c}</span>
               ))}
             </div>
@@ -63,7 +66,7 @@ const About = () => {
           viewport={{ once: true, margin: '-60px' }}
         >
           <div className="about-hex-grid">
-            {STATS.map((s, i) => (
+            {ABOUT_STATS.map((s, i) => (
               <motion.div
                 key={s.label}
                 className="hex-stat"

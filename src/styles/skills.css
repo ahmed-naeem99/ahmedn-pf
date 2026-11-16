@@ -70,8 +70,23 @@
 
 .skill-items {
   display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-pill {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.8rem;
+  cursor: default;
+}
+
+.skill-note {
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-muted);
 }
 
 .skill-row {

@@ -430,3 +430,101 @@
   .modal-container { border-radius: 20px 20px 0 0; max-height: 85vh; }
   .modal-body { padding: 1.5rem; }
 }
+
+
+/* ═══ SCHEMATIC PREVIEW ═══
+   Projects without a screenshot draw their own pipeline instead. */
+.schematic {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background:
+    radial-gradient(120% 120% at 20% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 55%),
+    linear-gradient(135deg, rgba(12, 12, 20, 0.95) 0%, rgba(20, 18, 12, 0.95) 100%);
+  overflow: hidden;
+}
+
+.schematic-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(212, 175, 55, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.055) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(130% 100% at 50% 50%, #000 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(130% 100% at 50% 50%, #000 40%, transparent 100%);
+}
+
+.schematic-flow {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem 0.5rem;
+  max-width: 100%;
+}
+
+.schematic-node {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  color: var(--gold-light);
+  background: rgba(212, 175, 55, 0.07);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 6px;
+  padding: 0.35rem 0.6rem;
+  white-space: nowrap;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover .schematic-node {
+  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.11);
+}
+
+.schematic-node-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold-glow);
+  flex-shrink: 0;
+}
+
+.schematic-arrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--gold-dim);
+  opacity: 0.65;
+}
+
+.schematic-icon {
+  position: absolute;
+  right: 0.9rem;
+  bottom: 0.7rem;
+  font-size: 1.6rem;
+  opacity: 0.22;
+  z-index: 1;
+}
+
+.modal-header-img .schematic {
+  border-radius: 20px 20px 0 0;
+}
+
+.modal-header-img .schematic-node {
+  font-size: 0.75rem;
+  padding: 0.45rem 0.75rem;
+}
+
+@media (max-width: 560px) {
+  .schematic-node { font-size: 0.62rem; padding: 0.3rem 0.5rem; }
+}

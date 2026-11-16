@@ -1,50 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { EXPERIENCE } from '../data/content';
+import { rich } from '../lib/rich';
 import '../styles/experience.css';
-
-const EXPERIENCES = [
-  {
-    role: 'Lead Software Engineer & Co-Founder',
-    company: 'Yusr Funeral Financial Aid',
-    companyUrl: 'https://yusr.ca',
-    period: 'Jan 2024 – Present',
-    location: 'Oakville, ON',
-    badge: 'Full-Time',
-    achievements: [
-      <>Designed and deployed a self-hosted, containerized <strong>CRM</strong> on a Hetzner VPS using <strong>Docker Compose</strong> and <strong>Coolify</strong></>,
-      <>Engineered a private <strong>FastAPI</strong> microservice running a quantized vision <strong>LLM (Ollama + Qwen2-VL)</strong> to automate ID document data extraction (OCR) without exposing member data to third-party APIs</>,
-      <>Integrated <strong>n8n</strong> to orchestrate webhook-driven pipelines connecting Next.js API routes, Stripe billing events, <strong>Resend</strong> transactional emails, and Mailchimp</>,
-      <>Built a secure <strong>Next.js 15</strong> front-end and <strong>PostgreSQL/Prisma</strong> backend with magic-link JWT authentication, handling complex user states and automated scheduled <strong>cron jobs</strong></>,
-    ],
-    tags: ['Next.js 15', 'FastAPI', 'Docker', 'Ollama', 'PostgreSQL', 'Prisma', 'n8n', 'Coolify', 'Stripe'],
-  },
-  {
-    role: 'Full-Stack Software Developer Associate',
-    company: 'FluidAI Medical',
-    period: 'May 2025 – Aug 2025',
-    location: 'Remote',
-    badge: 'Internship',
-    achievements: [
-      <>Developed full-stack features using <strong>Python (Flask)</strong>, React, and SQL, improving scalability of healthcare platforms by <strong>80%</strong></>,
-      <>Built scalable <strong>ETL pipelines</strong> to synchronize data between model outputs and the frontend interface</>,
-      <>Collaborated with cross-functional engineering teams in an <strong>Agile</strong> environment, applying version control (Git) and <strong>CI/CD workflows</strong> for rapid iteration</>,
-      <>Implemented modular, object-oriented design patterns to improve code maintainability across complex data structures</>,
-    ],
-    tags: ['Python', 'Flask', 'React', 'SQL', 'ETL', 'Git', 'CI/CD', 'Agile'],
-  },
-  {
-    role: 'ML Engineer',
-    company: 'SCOOTY',
-    period: 'May 2025 – Aug 2025',
-    location: 'Remote',
-    badge: 'Contract',
-    achievements: [
-      <>Mastered <strong>RAG</strong>, agentic workflows, and <strong>LLM</strong> prompt-based automation to build financial tech solutions achieving <strong>98% accuracy</strong> in data retrieval</>,
-      <>Developed <strong>ML</strong> and <strong>DL models</strong> focused on industry challenges, completing a rigorous technical and soft-skills curriculum</>,
-    ],
-    tags: ['RAG', 'LLMs', 'Agentic AI', 'Python', 'ML/DL', 'FinTech'],
-  },
-];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -64,14 +22,15 @@ const Experience = () => {
           Where I've <span className="accent">Built</span>
         </h2>
         <p className="section-subtitle">
-          From self-hosted AI infrastructure to healthcare platforms and fintech automation.
+          Payments and platform work at a transit-partnered mobility company, full-stack
+          engineering in regulated healthcare, and a company I co-founded and still run.
         </p>
       </div>
 
       <div className="timeline">
-        {EXPERIENCES.map((exp, i) => (
+        {EXPERIENCE.map((exp, i) => (
           <motion.div
-            key={i}
+            key={exp.company}
             className="timeline-item"
             custom={i}
             initial="hidden"
@@ -96,10 +55,13 @@ const Experience = () => {
                 <span style={{ color: 'var(--border-bright)' }}>·</span>
                 <span className="tc-location">{exp.location}</span>
               </div>
-              <div className="tc-period">{exp.period}</div>
+              <div className="tc-period">
+                {exp.period}
+                {exp.note && <span className="tc-note"> · {exp.note}</span>}
+              </div>
               <ul className="tc-achievements">
                 {exp.achievements.map((a, j) => (
-                  <li key={j}>{a}</li>
+                  <li key={j}>{rich(a)}</li>
                 ))}
               </ul>
               <div className="tc-tags">

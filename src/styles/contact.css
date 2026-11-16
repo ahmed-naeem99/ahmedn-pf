@@ -123,3 +123,22 @@
   .contact-email-display { font-size: 0.85rem; }
   .contact-socials { flex-wrap: wrap; }
 }
+
+
+.contact-resumes {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.contact-alt-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-alt-link:hover {
+  color: var(--gold);
+}

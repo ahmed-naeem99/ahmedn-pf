@@ -4,6 +4,7 @@ import { Typewriter } from 'react-simple-typewriter';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
+import { PROFILE, HERO_STATS } from '../data/content';
 import '../styles/hero.css';
 
 const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&'.split('');
@@ -76,7 +77,7 @@ const Hero = () => {
           <div className="hero-text">
             <div className="hero-system-tag">
               <span className="blink" />
-              SYS_INIT // PORTFOLIO_LOADED // v2.0
+              SYS_INIT // AVAILABLE_SUMMER_2027 // TORONTO
             </div>
 
             <h1 className="hero-name">
@@ -91,14 +92,7 @@ const Hero = () => {
             <div className="hero-role-line">
               <span style={{ color: 'var(--gold)', fontFamily: 'var(--font-mono)', fontSize: '0.9em' }}>$&gt;&nbsp;</span>
               <Typewriter
-                words={[
-                  'Full-Stack Engineer',
-                  'AI Systems Builder',
-                  'Co-Founder @ Yusr',
-                  'Next.js + FastAPI Dev',
-                  'LLM Integration Specialist',
-                  'Agentic Workflow Architect',
-                ]}
+                words={PROFILE.roles}
                 loop={0}
                 cursor
                 cursorStyle="_"
@@ -109,10 +103,10 @@ const Hero = () => {
             </div>
 
             <p className="hero-tagline">
-              Building AI-powered systems, containerized infrastructure, and full-stack products
-              that ship. Co-Founder &amp; Lead Engineer at{' '}
+              {PROFILE.tagline}{' '}
+              Co-Founder &amp; Lead Engineer at{' '}
               <a href="https://yusr.ca" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold)', textDecoration: 'none' }}>Yusr</a>.{' '}
-              Honours CS @ Toronto Metropolitan University.
+              Honours CS co-op @ Toronto Metropolitan University.
             </p>
 
             <div className="hero-actions">
@@ -125,56 +119,50 @@ const Hero = () => {
                 View My Work
               </motion.a>
               <motion.a
-                href="/Ahmed Naeem Resume - Software copy.pdf"
+                href={PROFILE.resume}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Download CV
+                Resume
               </motion.a>
             </div>
 
             <div className="hero-socials">
-              <a href="https://github.com/ahmed-naeem99" target="_blank" rel="noopener noreferrer" title="GitHub">
+              <a href={PROFILE.github} target="_blank" rel="noopener noreferrer" title="GitHub">
                 <FaGithub />
               </a>
-              <a href="https://www.linkedin.com/in/ahmed-abdullah-naeem" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer" title="LinkedIn">
                 <FaLinkedin />
               </a>
               <div className="divider-v" />
-              <a href="mailto:ahmednumber10@gmail.com" className="email-link">
+              <a href={`mailto:${PROFILE.email}`} className="email-link">
                 <FaEnvelope style={{ marginRight: '0.4rem' }} />
-                ahmednumber10@gmail.com
+                {PROFILE.email}
               </a>
             </div>
 
             <div className="hero-stats" ref={statsRef}>
-              <div className="stat-item">
-                <span className="stat-number">
-                  {statsInView ? <CountUp end={2} duration={1.5} suffix="+" /> : '0+'}
-                </span>
-                <span className="stat-label">Years Building</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">
-                  {statsInView ? <CountUp end={10} duration={1.8} suffix="+" /> : '0+'}
-                </span>
-                <span className="stat-label">Projects Shipped</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">
-                  {statsInView ? <CountUp end={15} duration={2} suffix="+" /> : '0+'}
-                </span>
-                <span className="stat-label">Technologies</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">
-                  {statsInView ? <CountUp end={10000} duration={2} separator="," suffix="+" /> : '0+'}
-                </span>
-                <span className="stat-label">Users Served</span>
-              </div>
+              {HERO_STATS.map((s) => (
+                <div className="stat-item" key={s.label}>
+                  <span className="stat-number">
+                    {statsInView ? (
+                      <CountUp
+                        end={s.value}
+                        duration={1.8}
+                        decimals={s.decimals || 0}
+                        separator={s.separator || ''}
+                        suffix={s.suffix || ''}
+                      />
+                    ) : (
+                      `0${s.suffix || ''}`
+                    )}
+                  </span>
+                  <span className="stat-label">{s.label}</span>
+                </div>
+              ))}
             </div>
           </div>
 
